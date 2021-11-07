@@ -35,7 +35,7 @@ OrtuDuaAnak = richard
 
 OrtuDuaAnak = mariecurie
 
-Query: anak(_Anak, PunyaMenantu), menikah(_Anak, _Menantu).
+Query: mertua(PunyaMenantu,_Menantu).
 PunyaMenantu = karel ? a
 
 PunyaMenantu = adalovelace
@@ -79,17 +79,3 @@ Keturunan = abdi ? a
 Keturunan = richard
 
 Keturunan = sherlockh
-
-Bagian II
- 
-Query: permute(6, 2, Z).
-Z = 30
-
-Query: virus(4, 5, 2, Y).
-Y = 80
-
-Query: virus(4, 2, 5, Y).
-Y = 1250
-
-Query: lcm(8,20,X).
-X = 40
