@@ -105,9 +105,13 @@ permute(X,Y,Z) :- X1 is X-1, Y1 is Y-1, permute(X1,Y1,Z1), Z is Z1*X.
 virus(0,N,R,N) :- !.
 virus(T,N,R,Y) :- T1 is T-1, virus(T1,N,R,Y1), Y is Y1*R.
 
-lcm()
-
 gcd(X,0,X) :- !.
 gcd(0,X,X) :- !.
 gcd(A,B,X) :- A1 is A mod B, gcd(B,A1,X).
 lcm(A,B,X) :- gcd(A,B,Z), X is (A*B)//Z.
+
+mul(A,0,0) :- !.
+mul(0,B,0) :- !.
+mul(A,B,X) :- ((A<0, B>0);(A>0, B<0)), A1 is A*(-1), mul(A1,B,X1), X is X1*(-1).
+mul(A,B,X) :- A<0, B<0, A1 is A*(-1), B1 is B*(-1), mul(A1,B1,X).
+mul(A,B,X) :- A>=0, B>=0, B1 is B-1, mul(A,B1,X1), X is X1+A.

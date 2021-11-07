@@ -5,9 +5,13 @@ faktorial(0,1) :- !.
 faktorial(N,X) :- N1 is N-1, faktorial(N1,X1), X is N*X1.
 
 mul(X,0,0) :- !.
-mul(A,B,X) :- B1 is B-1, mul(A,B1,X1), X is X1+A.
+mul(0,X,0) :- !.
+mul(A,B,X) :- ((A<0,B>0);(A>0,B<0)), A1 is A*(-1), mul(A1,B,X1), X is X1*(-1).
+mul(A,B,X) :- A<0, B<0, A1 is A*(-1), B1 is B*(-1), mul(A1,B1,X).
+mul(A,B,X) :- A>0, B>0, B1 is B-1, mul(A,B1,X1), X is X1+A.
 
 gcd(X,0,X) :- !.
 gcd(0,X,X) :- !.
 gcd(A,B,X) :- A1 is A mod B, gcd(B,A1,X).
 lcm(A,B,X) :- gcd(A,B,Z), X is (A*B)//Z.
+

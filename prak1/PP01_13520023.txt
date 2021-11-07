@@ -91,3 +91,5 @@ Y = 80
 Query: virus(4, 2, 5, Y).
 Y = 1250
 
+Query: lcm(8,20,X).
+X = 40
