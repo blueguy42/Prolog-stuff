@@ -1,0 +1,93 @@
+Pra Praktikum 1 Logkom
+Ahmad Alfani Handoyo
+13520023
+
+Bagian I
+
+Query: suami(karel, Istri).
+Istri = adalovelace
+
+Query: kakak(abdi, Adik).
+Adik = richard
+
+Query: keponakan(sherlockh, PamanBibi), \+ (keponakan(sherlockh, _Lain), _Lain\=PamanBibi, usia(_Lain,_X), usia(PamanBibi, _Y), _X > _Y).
+PamanBibi = nikolatesla ? a
+
+Query: menikah(mariecurie, _SuamiIstri), saudara(_SuamiIstri, Ipar).
+Ipar = abdi
+
+Query: kakak(_Sulung, Kedua), anaksulung(_Sulung), \+ (kakak(_Lain, Kedua), \+ (anaksulung(_Lain))).
+Kedua = alanturing ? a
+
+Kedua = richard
+
+Kedua = masumisera
+
+Query: cucu(CucuTermuda, kinantan), anakbungsu(CucuTermuda), \+ (sepupu(_Lain, CucuTermuda), usia(_Lain,_X), usia(CucuTermuda, _Y), _X < _Y).
+CucuTermuda = masumisera ? a
+
+Query: anak(_AnakA, OrtuDuaAnak), anak(_AnakB, OrtuDuaAnak), _AnakA\=_AnakB, anaksulung(_AnakA), anakbungsu(_AnakB), \+ (kakak(_Lain, _AnakB), _Lain\=_AnakA).
+OrtuDuaAnak = rakartini ? a
+
+OrtuDuaAnak = gabenewell
+
+OrtuDuaAnak = richard
+
+OrtuDuaAnak = mariecurie
+
+Query: anak(_Anak, PunyaMenantu), menikah(_Anak, _Menantu).
+PunyaMenantu = karel ? a
+
+PunyaMenantu = adalovelace
+
+PunyaMenantu = rakartini
+
+PunyaMenantu = gabenewell
+
+PunyaMenantu = rakartini
+
+PunyaMenantu = gabenewell
+
+PunyaMenantu = kinantan
+
+PunyaMenantu = elsapataky
+
+PunyaMenantu = jkrowling
+
+PunyaMenantu = abdi
+
+Query: pria(Kurang2Anak), ((\+ anak(_,Kurang2Anak)); (anak(_Anak, Kurang2Anak), anaksulung(_Anak), anakbungsu(_Anak))).
+Kurang2Anak = kinantan ? a
+
+Kurang2Anak = nikolatesla
+
+Kurang2Anak = alanturing
+
+Kurang2Anak = abdi
+
+Kurang2Anak = sherlockh
+
+
+Query: wanita(Melahirkan25Tahun), anak(_Anak,Melahirkan25Tahun), anaksulung(_Anak), usia(Melahirkan25Tahun, _X), usia(_Anak,_Y), (_X-_Y < 25).
+Melahirkan25Tahun = adalovelace ? a
+
+Melahirkan25Tahun = jkrowling
+
+Query: keturunan(Keturunan, gabenewell), usia(Keturunan,_X), _X >= 25.
+Keturunan = abdi ? a
+
+Keturunan = richard
+
+Keturunan = sherlockh
+
+Bagian II
+ 
+Query: permute(6, 2, Z).
+Z = 30
+
+Query: virus(4, 5, 2, Y).
+Y = 80
+
+Query: virus(4, 2, 5, Y).
+Y = 1250
+
